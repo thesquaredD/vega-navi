@@ -8,6 +8,7 @@ declare module '@mui/material/styles' {
     interface ColorSchemeOverrides {
         appletv: true;
         blueradiance: true;
+        frutigeraero: true;
         purplehaze: true;
         wmc: true;
     }
@@ -81,6 +82,25 @@ const light = merge({}, DEFAULT_COLOR_SCHEME, {
     }
 });
 
+/** The "Frutiger Aero" color scheme — bright sky/grass with Liquid Glass surfaces. */
+const frutigeraero = buildCustomColorScheme({
+    palette: {
+        primary: {
+            main: '#00b3ff'
+        },
+        secondary: {
+            main: '#7ed957'
+        },
+        background: {
+            default: '#5db8ea',
+            paper: 'rgba(8, 32, 64, 0.55)'
+        },
+        AppBar: {
+            defaultBg: 'rgba(255, 255, 255, 0.16)'
+        }
+    }
+});
+
 /** The "Purple Haze" color scheme. */
 const purplehaze = buildCustomColorScheme({
     palette: {
@@ -116,6 +136,7 @@ export const COLOR_SCHEMES = {
     appletv,
     blueradiance,
     dark: DEFAULT_COLOR_SCHEME,
+    frutigeraero,
     light,
     purplehaze,
     wmc

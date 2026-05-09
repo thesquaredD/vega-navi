@@ -86,6 +86,26 @@
     </style>
 </head>
 <body dir="ltr">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none">
+        <defs>
+            <!--
+                Liquid-glass displacement filter.
+                primitiveUnits=objectBoundingBox so coords scale with the host element.
+                Turbulence makes a smooth low-frequency noise field; we blur it to soften
+                and use it as the displacement map for the backdrop. No baked geometry,
+                no fixed shape — works on any element regardless of size or aspect ratio.
+            -->
+            <filter id="liquid-glass" primitiveUnits="objectBoundingBox" x="0" y="0" width="1" height="1">
+                <feTurbulence type="turbulence" baseFrequency="0.9" numOctaves="3" seed="3" result="noise"/>
+                <feGaussianBlur in="noise" stdDeviation="0.04" result="smooth"/>
+                <feComponentTransfer in="smooth" result="map">
+                    <feFuncR type="linear" slope="3" intercept="-1"/>
+                    <feFuncG type="linear" slope="3" intercept="-1"/>
+                </feComponentTransfer>
+                <feDisplacementMap in="SourceGraphic" in2="map" scale="0.09" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+        </defs>
+    </svg>
     <div id="reactRoot">
         <div class="splashLogo"></div>
     </div>
