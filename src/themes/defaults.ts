@@ -32,7 +32,7 @@ export const DEFAULT_COLOR_SCHEME: ColorSystemOptions = {
 /** The default customizations to the default MUI theme. */
 export const DEFAULT_THEME_OPTIONS: ThemeOptions = {
     typography: {
-        fontFamily: '"Noto Sans", sans-serif',
+        fontFamily: '"Bricolage Grotesque", "Noto Sans", sans-serif',
         button: {
             textTransform: 'none'
         },

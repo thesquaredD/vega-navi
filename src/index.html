@@ -22,6 +22,11 @@
 
     <title>Jellyfin</title>
 
+    <!-- VegaNAVI fork: Bricolage Grotesque variable font (optical size + weight axes). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
     <style>
         .transparentDocument,
         .backgroundContainer-transparent:not(.withBackdrop) {
@@ -55,6 +60,28 @@
 
         .preload {
             background-color: #101010;
+        }
+
+        /* VegaNAVI splash wordmark — overrides the default Jellyfin logo from site.scss. */
+        .splashLogo {
+            background-image: none !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-stretch: 75%;
+            font-size: 6vw;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            color: #f6fbff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+        }
+
+        .splashLogo-vega { font-weight: 400; }
+        .splashLogo-navi { font-weight: 600; }
+
+        @media screen and (min-device-width: 992px) {
+            .splashLogo { background-image: none !important; }
         }
 
         .hide,
@@ -107,7 +134,7 @@
         </defs>
     </svg>
     <div id="reactRoot">
-        <div class="splashLogo"></div>
+        <div class="splashLogo"><span class="splashLogo-vega">Vega</span><span class="splashLogo-navi">NAVI</span></div>
     </div>
 </body>
 </html>
