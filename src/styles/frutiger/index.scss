@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Frutiger";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Frutiger"), url("~styles/frutiger/Frutiger-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Frutiger";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local("Frutiger Bold"), local("Frutiger-Bold"), url("~styles/frutiger/Frutiger-Bold.ttf") format("truetype");
+}
