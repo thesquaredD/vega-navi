@@ -123,13 +123,13 @@
                 no fixed shape — works on any element regardless of size or aspect ratio.
             -->
             <filter id="liquid-glass" primitiveUnits="objectBoundingBox" x="0" y="0" width="1" height="1">
-                <feTurbulence type="turbulence" baseFrequency="0.9" numOctaves="3" seed="3" result="noise"/>
-                <feGaussianBlur in="noise" stdDeviation="0.04" result="smooth"/>
+                <feTurbulence type="turbulence" baseFrequency="2.2 5" numOctaves="2" seed="2" result="noise"/>
+                <feGaussianBlur in="noise" stdDeviation="0.03" result="smooth"/>
                 <feComponentTransfer in="smooth" result="map">
-                    <feFuncR type="linear" slope="3" intercept="-1"/>
-                    <feFuncG type="linear" slope="3" intercept="-1"/>
+                    <feFuncR type="linear" slope="2" intercept="-0.5"/>
+                    <feFuncG type="linear" slope="2" intercept="-0.5"/>
                 </feComponentTransfer>
-                <feDisplacementMap in="SourceGraphic" in2="map" scale="0.09" xChannelSelector="R" yChannelSelector="G"/>
+                <feDisplacementMap in="SourceGraphic" in2="map" scale="0.06" xChannelSelector="R" yChannelSelector="G"/>
             </filter>
         </defs>
     </svg>

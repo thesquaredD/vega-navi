@@ -164,7 +164,8 @@
     "lint": "eslint \"./\"",
     "test": "vitest --watch=false --config vite.config.ts",
     "test:watch": "vitest --config vite.config.ts",
-    "stylelint": "stylelint \"src/**/*.{css,scss}\""
+    "stylelint": "stylelint \"src/**/*.{css,scss}\"",
+    "deploy": "bin/deploy.sh"
   },
   "engines": {
     "node": ">=20.0.0",

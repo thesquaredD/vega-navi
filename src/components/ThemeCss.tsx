@@ -7,7 +7,10 @@ interface ThemeCssProps {
     dashboard?: boolean
 }
 
-const getThemeUrl = (id: string) => `themes/${id}/theme.css`;;
+// Cache-buster: theme.css ships at a fixed URL so QtWebEngine / JMP
+// caches it across deploys. A per-page-load nonce forces a fresh fetch.
+const themeNonce = Date.now();
+const getThemeUrl = (id: string) => `themes/${id}/theme.css?v=${themeNonce}`;
 
 const DEFAULT_THEME_URL = getThemeUrl(getDefaultTheme().id);
 
